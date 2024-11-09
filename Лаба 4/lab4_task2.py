@@ -8,11 +8,14 @@ OUTPUT_FILENAME = "output.json"
 
 def task() -> None:
     # TODO считать содержимое csv файла
+    # with open(INPUT_FILENAME, 'r') as file:
+    #     reader = csv.DictReader(file)
+    #     c = []
+    #     for i in reader:
+    #         c.append(i)
+    #     file.close()
     with open(INPUT_FILENAME, 'r') as file:
-        reader = csv.DictReader(file)
-        c = []
-        for i in reader:
-            c.append(i)
+        c = [c for c in csv.DictReader(file)]
         file.close()
 
     ...  # TODO Сериализовать в файл с отступами равными 4
